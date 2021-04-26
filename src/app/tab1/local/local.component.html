@@ -1,0 +1,27 @@
+<ion-content *ngIf="localSeleccionado">
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Mapa</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <iframe [src]="localSeleccionado.mapa | safe" width="400" height="300" style="border:0;" allowfullscreen=""
+              loading="lazy"></iframe>
+    </ion-card-content>
+  </ion-card>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>Horarios</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <ion-list>
+        <ion-item *ngFor="let horario of localSeleccionado.horarios">
+          <ion-label>
+            <h2>{{horario.dia}}  <small>{{horario.horario}}</small></h2>
+          </ion-label>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+  </ion-card>
+</ion-content>
+
